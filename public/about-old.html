@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Demo</title>
+</head>
+<body>
+  
+  <h1>About Page</h1>
+  
+
+  <script>
+    // Javascript Classes
+    class Persona {
+      constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+      }
+
+      // Metodo para la clase Persona (metodo en Javascript es una funcion, solo que es una funcion de una clase por eso se llama metodo.)
+      saludar() {
+        console.log(`hola mi nombre es ${this.nombre} y tengo ${this.edad}`);
+      }
+
+      // Metodo Estatico se define con el prefijo 'static'
+      static definicion() {
+        console.log('Una persona es un ser humano!');
+      }
+
+    }
+    
+    // Instanciando una nuewva Persona
+    // let persona = new Persona('Anibal', 27);
+    // persona.saludar();
+
+    // Llamando al metodo estatico
+    // Persona.definicion();
+
+    // Herencia
+    class Desarrollador extends Persona {
+
+      constructor(nombre, edad, tipo) {
+        // Super me permite mantener el constructor 
+        // de la clase heredada y crear uno nuevo para la clase
+        super(nombre, edad); // Super en este caso obtiene las propiedades del constructor de la clase heredada
+        this.tipo = tipo;
+
+      }
+
+      saludoDesarrollador() {
+        this.saludar();
+        console.log(`Soy un '${this.tipo}' developer`);
+      }
+
+    }
+
+    let desarrollador = new Desarrollador('Emanuel', 24, 'Frontend');
+
+    desarrollador.saludoDesarrollador();
+
+    //Desarrollador.definicion();
+
+  </script>
+
+</body>
+</html>
